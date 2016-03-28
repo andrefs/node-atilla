@@ -16,7 +16,10 @@
   "author": "André Santos",
   "license": "ISC",
   "dependencies": {
+    "browser-sync": "2.11.2",
     "express": "4.13.4",
+    "gulp": "3.9.1",
+    "gulp-live-server": "0.0.29",
     "hbs": "4.0.0"
   }
 }
