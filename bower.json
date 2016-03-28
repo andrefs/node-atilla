@@ -1,0 +1,25 @@
+{
+  "name": "atilla",
+  "description": "Browser-based GUI for ElasticSearch inspired by GenghisApp",
+  "main": "index.js",
+  "authors": [
+    "André Santos"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "elasticsearch",
+    "elastic",
+    "search",
+    "genghis",
+    "genghisapp"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

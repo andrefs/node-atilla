@@ -1,0 +1,22 @@
+{
+  "name": "atilla",
+  "version": "0.0.1",
+  "description": "Browser-based GUI for ElasticSearch inspired by GenghisApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "elasticsearch",
+    "elastic",
+    "search",
+    "genghis",
+    "genghisapp"
+  ],
+  "author": "André Santos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.13.4",
+    "hbs": "4.0.0"
+  }
+}
