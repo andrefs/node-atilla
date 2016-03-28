@@ -4,6 +4,7 @@ var port = 7777;
 
 // view engine setup
 app.set('view engine', 'hbs');
+app.use(express.static(__dirname+'/../.tmp'));
 
 app.get('/', function(req, res){
     res.render('../app/index.hbs');
