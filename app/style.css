@@ -1,0 +1,176 @@
+
+/***********
+ * Nav bar *
+ ***********/
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar .navbar-header .navbar-brand {
+    float: left;
+    display: block;
+    padding: 20px 20px 20px;
+    margin-left: -47.5px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #fff;
+    text-shadow: 0 1px 0#fff
+}
+
+.navbar .navbar-header .navbar-brand:hover,.navbar-brand:focus {
+    text-decoration: none
+}
+
+.navbar-text {
+    margin-bottom: 0;
+    line-height: 60px;
+    color: #777
+}
+
+.navbar .navbar-header .navbar-brand {
+    font-size: 32px;
+    padding: 16px 20px 12px;
+    font-weight: 700;
+    color: #ddd;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25),0 1px 0#fff,0 0 30px rgba(0,0,0,0.125);
+    -webkit-transition: color .1s linear;
+    -moz-transition: color .1s linear;
+    -o-transition: color .1s linear;
+    transition: color .1s linear
+}
+
+.navbar .navbar-header .navbar-brand:hover {
+    color: #07577D;
+}
+
+
+/*************
+ * Jumbotron *
+ *************/
+
+.jumbotron {
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4),0 0 30px rgba(0,0,0,0.1);
+    background-color:#07577D;
+    background-image:
+    radial-gradient(#024465 9px, transparent 10px),
+    repeating-radial-gradient(#024465 0, #024465 4px, transparent 5px, transparent 20px, #024465 21px, #024465 25px, transparent 26px, transparent 50px);
+    background-size: 30px 30px, 90px 90px;
+    background-position: 0 0;
+}
+
+.jumbotron.epic {
+    text-align: center;
+}
+
+.welcome-links {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.welcome-links li {
+    display: inline;
+    padding: 0 10px;
+    color: #729e7c
+}
+
+.welcome-links a:link,.welcome-links a:visited {
+    color: #B9C6CF;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out
+}
+
+.welcome-links a:hover,.welcome-links a:active {
+    color: #fff
+}
+
+/********
+ * Body *
+ ********/
+html, body {
+    background-image: url('bg.png');
+}
+
+body {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+/**************
+ * Typography *
+ **************/
+
+.app-section .has-details {
+    border-bottom: 1px dotted#998;
+    cursor: default;
+}
+
+.app-section > header h2 {
+    font-size: 24px;
+    margin: 0;
+    line-height: 30px;
+}
+
+h1,h2,h3,a.navbar-brand,#footer p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700
+}
+
+/**********
+ * Tables *
+ **********/
+
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border-bottom-width: 1px;
+}
+
+tr td.action-column button {
+    visibility: hidden;
+    -webkit-transition-property: color,background,box-shadow;
+    -moz-transition-property: color,background,box-shadow;
+    -o-transition-property: color,background,box-shadow;
+    transition-property: color,background,box-shadow
+}
+
+tr:hover td.action-column button {
+    visibility: inherit
+}
+
+tr td.action-column {
+    padding: 7px 10px 0;
+    text-align: right
+}
+
+/***********
+ * Buttons *
+ ***********/
+
+.btn {
+    line-height: 20px;
+}
+
+.btn-mini [class^="icon-"],.btn-mini [class*=" icon-"] {
+    margin-top: -1px
+}
+
+.btn-mini {
+    padding: 0 6px;
+    font-size: 10.5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+
+/**********
+ * Footer *
+ **********/
+
+#footer {
+    font-weight: 400;
+    text-align: center
+}
