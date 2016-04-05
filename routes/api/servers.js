@@ -1,5 +1,5 @@
 var async = require('async');
-var es = require('../lib/elasticSearch');
+var es = require('../../lib/elasticSearch');
 module.exports = function(app){
 
 // http://localhost:9200/_stats

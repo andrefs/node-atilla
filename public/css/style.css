@@ -92,7 +92,7 @@
  * Body *
  ********/
 html, body {
-    background-image: url('bg.png');
+    background-image: url('../imgs/bg.png');
 }
 
 body {
