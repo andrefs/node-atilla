@@ -20,16 +20,23 @@ class Servers extends React.Component {
     }
 
     onChange(state) {
+        console.log('onChange', state);
         this.setState(state);
     }
 
     render() {
-
         let serversInfo = this.state.servers.map((server) => {
-            return
-                <tr>
+            return (
+                <tr key="{server.id}">
+                    <td><Link to={"/servers/"+server.id}>{server.name}</Link></td>
+                    <td>{server.indexes.length}</td>
+                    <td>{server.docs.count}</td>
+                    <td>{server.store.size_in_bytes}</td>
+                    <td></td>
                 </tr>
+            );
         });
+        console.log('XXXXXXXX 2', serversInfo);
 
         return (
             <section id="servers" className="app-section panel panel-default">
@@ -42,17 +49,13 @@ class Servers extends React.Component {
                             <tr>
                                 <th>name</th>
                                 <th>indexes</th>
+                                <th>docs</th>
                                 <th>size</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><Link to={"/servers/andrefs.com"}>andrefs.com</Link></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            {serversInfo}
                         </tbody>
                     </table>
                 </div>

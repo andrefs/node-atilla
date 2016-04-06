@@ -598,16 +598,44 @@ var Servers = function (_React$Component) {
     }, {
         key: 'onChange',
         value: function onChange(state) {
+            console.log('onChange', state);
             this.setState(state);
         }
     }, {
         key: 'render',
         value: function render() {
-
             var serversInfo = this.state.servers.map(function (server) {
-                return;
-                _react2.default.createElement('tr', null);
+                return _react2.default.createElement(
+                    'tr',
+                    { key: '{server.id}' },
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        _react2.default.createElement(
+                            _reactRouter.Link,
+                            { to: "/servers/" + server.id },
+                            server.name
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        server.indexes.length
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        server.docs.count
+                    ),
+                    _react2.default.createElement(
+                        'td',
+                        null,
+                        server.store.size_in_bytes
+                    ),
+                    _react2.default.createElement('td', null)
+                );
             });
+            console.log('XXXXXXXX 2', serversInfo);
 
             return _react2.default.createElement(
                 'section',
@@ -646,6 +674,11 @@ var Servers = function (_React$Component) {
                                 _react2.default.createElement(
                                     'th',
                                     null,
+                                    'docs'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
                                     'size'
                                 ),
                                 _react2.default.createElement('th', null)
@@ -654,22 +687,7 @@ var Servers = function (_React$Component) {
                         _react2.default.createElement(
                             'tbody',
                             null,
-                            _react2.default.createElement(
-                                'tr',
-                                null,
-                                _react2.default.createElement(
-                                    'td',
-                                    null,
-                                    _react2.default.createElement(
-                                        _reactRouter.Link,
-                                        { to: "/servers/andrefs.com" },
-                                        'andrefs.com'
-                                    )
-                                ),
-                                _react2.default.createElement('td', null),
-                                _react2.default.createElement('td', null),
-                                _react2.default.createElement('td', null)
-                            )
+                            serversInfo
                         )
                     )
                 )
@@ -818,7 +836,7 @@ exports.default = _react2.default.createElement(
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -836,27 +854,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ServersStore = function () {
-  function ServersStore() {
-    _classCallCheck(this, ServersStore);
+    function ServersStore() {
+        _classCallCheck(this, ServersStore);
 
-    this.bindActions(_ServersActions2.default);
-    this.servers = [];
-  }
-
-  _createClass(ServersStore, [{
-    key: 'onGetServersInfoSuccess',
-    value: function onGetServersInfoSuccess(data) {
-      this.servers = data;
+        this.bindActions(_ServersActions2.default);
+        this.servers = [];
     }
-  }, {
-    key: 'onGetServersInfoFail',
-    value: function onGetServersInfoFail(jqXhr) {
-      // Handle multiple response formats, fallback to HTTP status code number.
-      //toastr.error(jqXhr.responseJSON && jqXhr.responseJSON.message || jqXhr.responseText || jqXhr.statusText);
-    }
-  }]);
 
-  return ServersStore;
+    _createClass(ServersStore, [{
+        key: 'onGetServersInfoSuccess',
+        value: function onGetServersInfoSuccess(data) {
+            console.log('serversInfo success', data);
+            this.servers = data;
+        }
+    }, {
+        key: 'onGetServersInfoFail',
+        value: function onGetServersInfoFail(jqXhr) {
+            console.log('serversInfo fail');
+            // Handle multiple response formats, fallback to HTTP status code number.
+            //toastr.error(jqXhr.responseJSON && jqXhr.responseJSON.message || jqXhr.responseText || jqXhr.statusText);
+        }
+    }]);
+
+    return ServersStore;
 }();
 
 exports.default = _alt2.default.createStore(ServersStore);
