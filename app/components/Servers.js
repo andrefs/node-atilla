@@ -29,7 +29,7 @@ class Servers extends React.Component {
             return (
                 <tr key="{server.id}">
                     <td><Link to={"/servers/"+server.id}>{server.name}</Link></td>
-                    <td>{server.indexes.length}</td>
+                    <td>{Object.keys(server.indices).length}</td>
                     <td>{server.docs.count}</td>
                     <td>{humanSize(server.store.size_in_bytes)}</td>
                     <td></td>

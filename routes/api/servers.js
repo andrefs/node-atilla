@@ -23,12 +23,14 @@ module.exports = function(app){
 
     app.route('/api/servers')
     .get(function(req, res){
-        var serverList = req.cookies ? req.cookies.atilla_servers || [] : [];
+        var atilla_servers = req.cookies ? req.cookies.atilla_servers : [];
+        var serverList = Array.isArray(atilla_servers) && atilla_servers.length ? atilla_servers : [];
+
         es.servers(serverList, function(err, serverInfo){
             if(err){
                 res.status(500).send('Error while retrieving server info');
             }
-            res.send(servers);
+            res.send(serverInfo);
         });
     })
 };
