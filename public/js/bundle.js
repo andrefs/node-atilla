@@ -45,6 +45,61 @@ var App = function (_React$Component) {
 exports.default = App;
 
 },{"react":"react"}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Documents = function (_React$Component) {
+    _inherits(Documents, _React$Component);
+
+    function Documents() {
+        _classCallCheck(this, Documents);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(Documents).apply(this, arguments));
+    }
+
+    _createClass(Documents, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { id: "documents", className: "app-section panel panel-default" },
+                _react2.default.createElement(
+                    "header",
+                    { className: "panel-heading" },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "documents"
+                    )
+                ),
+                _react2.default.createElement("div", { className: "panel-body" })
+            );
+        }
+    }]);
+
+    return Documents;
+}(_react2.default.Component);
+
+exports.default = Documents;
+
+},{"react":"react"}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -90,7 +145,172 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":"react"}],3:[function(require,module,exports){
+},{"react":"react"}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Indexes = function (_React$Component) {
+    _inherits(Indexes, _React$Component);
+
+    function Indexes() {
+        _classCallCheck(this, Indexes);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(Indexes).apply(this, arguments));
+    }
+
+    _createClass(Indexes, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { id: "indexes", className: "app-section panel panel-default" },
+                _react2.default.createElement(
+                    "header",
+                    { className: "panel-heading" },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "Indexes"
+                    )
+                ),
+                _react2.default.createElement("div", { className: "panel-body" })
+            );
+        }
+    }]);
+
+    return Indexes;
+}(_react2.default.Component);
+
+exports.default = Indexes;
+
+},{"react":"react"}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Servers = function (_React$Component) {
+    _inherits(Servers, _React$Component);
+
+    function Servers() {
+        _classCallCheck(this, Servers);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(Servers).apply(this, arguments));
+    }
+
+    _createClass(Servers, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { id: "servers", className: "app-section panel panel-default" },
+                _react2.default.createElement(
+                    "header",
+                    { className: "panel-heading" },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "Servers"
+                    )
+                ),
+                _react2.default.createElement("div", { className: "panel-body" })
+            );
+        }
+    }]);
+
+    return Servers;
+}(_react2.default.Component);
+
+exports.default = Servers;
+
+},{"react":"react"}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Types = function (_React$Component) {
+    _inherits(Types, _React$Component);
+
+    function Types() {
+        _classCallCheck(this, Types);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(Types).apply(this, arguments));
+    }
+
+    _createClass(Types, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { id: "types", className: "app-section panel panel-default" },
+                _react2.default.createElement(
+                    "header",
+                    { className: "panel-heading" },
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "Types"
+                    )
+                ),
+                _react2.default.createElement("div", { className: "panel-body" })
+            );
+        }
+    }]);
+
+    return Types;
+}(_react2.default.Component);
+
+exports.default = Types;
+
+},{"react":"react"}],7:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -123,7 +343,7 @@ _reactDom2.default.render(_react2.default.createElement(
   _routes2.default
 ), document.getElementById('app'));
 
-},{"./routes":4,"history/lib/createBrowserHistory":14,"react":"react","react-dom":"react-dom","react-router":"react-router"}],4:[function(require,module,exports){
+},{"./routes":8,"history/lib/createBrowserHistory":18,"react":"react","react-dom":"react-dom","react-router":"react-router"}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -144,15 +364,38 @@ var _Home = require('./components/Home');
 
 var _Home2 = _interopRequireDefault(_Home);
 
+var _Servers = require('./components/Servers');
+
+var _Servers2 = _interopRequireDefault(_Servers);
+
+var _Indexes = require('./components/Indexes');
+
+var _Indexes2 = _interopRequireDefault(_Indexes);
+
+var _Types = require('./components/Types');
+
+var _Types2 = _interopRequireDefault(_Types);
+
+var _Documents = require('./components/Documents');
+
+var _Documents2 = _interopRequireDefault(_Documents);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createElement(
   _reactRouter.Route,
   { component: _App2.default },
-  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default })
+  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Servers2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/servers/:serverid', component: _Indexes2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/servers/:serverid/indexes/:indexid', component: _Types2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/servers/:serverid/indexes/:indexid/types/:typeid', component: _Documents2.default }),
+  _react2.default.createElement(_reactRouter.Redirect, { from: '/servers', to: '/' }),
+  _react2.default.createElement(_reactRouter.Redirect, { from: '/servers/:serversid/indexes', to: '/servers/:serversid' }),
+  _react2.default.createElement(_reactRouter.Redirect, { from: '/servers/:serversid/indexes/:indexid/types', to: '/servers/:serversid/indexes/:indexid' }),
+  _react2.default.createElement(_reactRouter.Redirect, { from: '/servers/:serversid/indexes/:indexid/types/:typeid/documents', to: '/servers/:serversid/indexes/:indexid/types/:typeid' })
 );
 
-},{"./components/App":1,"./components/Home":2,"react":"react","react-router":"react-router"}],5:[function(require,module,exports){
+},{"./components/App":1,"./components/Documents":2,"./components/Home":3,"./components/Indexes":4,"./components/Servers":5,"./components/Types":6,"react":"react","react-router":"react-router"}],9:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
 var isArguments = require('./lib/is_arguments.js');
@@ -248,7 +491,7 @@ function objEquiv(a, b, opts) {
   return typeof a === typeof b;
 }
 
-},{"./lib/is_arguments.js":6,"./lib/keys.js":7}],6:[function(require,module,exports){
+},{"./lib/is_arguments.js":10,"./lib/keys.js":11}],10:[function(require,module,exports){
 var supportsArgumentsClass = (function(){
   return Object.prototype.toString.call(arguments)
 })() == '[object Arguments]';
@@ -270,7 +513,7 @@ function unsupported(object){
     false;
 };
 
-},{}],7:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 exports = module.exports = typeof Object.keys === 'function'
   ? Object.keys : shim;
 
@@ -281,7 +524,7 @@ function shim (obj) {
   return keys;
 }
 
-},{}],8:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /**
  * Indicates that navigation was caused by a call to history.push.
  */
@@ -313,7 +556,7 @@ exports['default'] = {
   REPLACE: REPLACE,
   POP: POP
 };
-},{}],9:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -372,7 +615,7 @@ function loopAsync(turns, work, callback) {
 
   next();
 }
-},{}],10:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (process){
 /*eslint-disable no-empty */
 'use strict';
@@ -449,7 +692,7 @@ function readState(key) {
 }
 }).call(this,require('_process'))
 
-},{"_process":21,"warning":22}],11:[function(require,module,exports){
+},{"_process":25,"warning":26}],15:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -525,13 +768,13 @@ function supportsGoWithoutReloadUsingHash() {
   var ua = navigator.userAgent;
   return ua.indexOf('Firefox') === -1;
 }
-},{}],12:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 exports.canUseDOM = canUseDOM;
-},{}],13:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -582,7 +825,7 @@ function parsePath(path) {
 }
 }).call(this,require('_process'))
 
-},{"_process":21,"warning":22}],14:[function(require,module,exports){
+},{"_process":25,"warning":26}],18:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -762,7 +1005,7 @@ exports['default'] = createBrowserHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":8,"./DOMStateStorage":10,"./DOMUtils":11,"./ExecutionEnvironment":12,"./PathUtils":13,"./createDOMHistory":15,"_process":21,"invariant":20}],15:[function(require,module,exports){
+},{"./Actions":12,"./DOMStateStorage":14,"./DOMUtils":15,"./ExecutionEnvironment":16,"./PathUtils":17,"./createDOMHistory":19,"_process":25,"invariant":24}],19:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -806,7 +1049,7 @@ exports['default'] = createDOMHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./DOMUtils":11,"./ExecutionEnvironment":12,"./createHistory":16,"_process":21,"invariant":20}],16:[function(require,module,exports){
+},{"./DOMUtils":15,"./ExecutionEnvironment":16,"./createHistory":20,"_process":25,"invariant":24}],20:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1098,7 +1341,7 @@ exports['default'] = createHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":8,"./AsyncUtils":9,"./PathUtils":13,"./createLocation":17,"./deprecate":18,"./runTransitionHook":19,"_process":21,"deep-equal":5,"warning":22}],17:[function(require,module,exports){
+},{"./Actions":12,"./AsyncUtils":13,"./PathUtils":17,"./createLocation":21,"./deprecate":22,"./runTransitionHook":23,"_process":25,"deep-equal":9,"warning":26}],21:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1153,7 +1396,7 @@ exports['default'] = createLocation;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":8,"./PathUtils":13,"_process":21,"warning":22}],18:[function(require,module,exports){
+},{"./Actions":12,"./PathUtils":17,"_process":25,"warning":26}],22:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1176,7 +1419,7 @@ exports['default'] = deprecate;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"_process":21,"warning":22}],19:[function(require,module,exports){
+},{"_process":25,"warning":26}],23:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1204,7 +1447,7 @@ exports['default'] = runTransitionHook;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"_process":21,"warning":22}],20:[function(require,module,exports){
+},{"_process":25,"warning":26}],24:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -1257,7 +1500,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-},{}],21:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -1350,7 +1593,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],22:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -1412,7 +1655,7 @@ if ("development" !== 'production') {
 
 module.exports = warning;
 
-},{}]},{},[3])
+},{}]},{},[7])
 
 
 //# sourceMappingURL=bundle.js.map
