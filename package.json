@@ -35,6 +35,7 @@
     "express": "4.13.4",
     "hbs": "4.0.0",
     "history": "2.0.1",
+    "human-size": "1.1.0",
     "morgan": "1.7.0",
     "react": "0.14.8",
     "react-dom": "0.14.8",

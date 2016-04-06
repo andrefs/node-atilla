@@ -2,6 +2,7 @@ import React          from 'react';
 import {Link}         from 'react-router';
 import ServersStore   from '../stores/ServersStore'
 import ServersActions from '../actions/ServersActions';
+import humanSize      from 'human-size';
 
 class Servers extends React.Component {
     constructor(props){
@@ -30,7 +31,7 @@ class Servers extends React.Component {
                     <td><Link to={"/servers/"+server.id}>{server.name}</Link></td>
                     <td>{server.indexes.length}</td>
                     <td>{server.docs.count}</td>
-                    <td>{server.store.size_in_bytes}</td>
+                    <td>{humanSize(server.store.size_in_bytes)}</td>
                     <td></td>
                 </tr>
             );
