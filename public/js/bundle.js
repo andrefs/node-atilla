@@ -661,8 +661,8 @@ var Servers = function (_React$Component) {
                                     'td',
                                     null,
                                     _react2.default.createElement(
-                                        'a',
-                                        { href: '/servers/andrefs.com' },
+                                        _reactRouter.Link,
+                                        { to: "/servers/andrefs.com" },
                                         'andrefs.com'
                                     )
                                 ),

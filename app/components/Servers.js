@@ -48,7 +48,7 @@ class Servers extends React.Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a href="/servers/andrefs.com">andrefs.com</a></td>
+                                <td><Link to={"/servers/andrefs.com"}>andrefs.com</Link></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
