@@ -425,7 +425,7 @@ var JumboTron = function (_React$Component) {
 exports.default = JumboTron;
 
 },{"react":"react"}],9:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -433,9 +433,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -455,33 +457,33 @@ var NavBar = function (_React$Component) {
     }
 
     _createClass(NavBar, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "nav",
-                { className: "navbar navbar-default navbar-fixed-top" },
+                'nav',
+                { className: 'navbar navbar-default navbar-fixed-top' },
                 _react2.default.createElement(
-                    "div",
-                    { className: "container" },
+                    'div',
+                    { className: 'container' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "navbar-header" },
+                        'div',
+                        { className: 'navbar-header' },
                         _react2.default.createElement(
-                            "button",
-                            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+                            'button',
+                            { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#navbar', 'aria-expanded': 'false', 'aria-controls': 'navbar' },
                             _react2.default.createElement(
-                                "span",
-                                { className: "sr-only" },
-                                "Toggle navigation"
+                                'span',
+                                { className: 'sr-only' },
+                                'Toggle navigation'
                             ),
-                            _react2.default.createElement("span", { className: "icon-bar" }),
-                            _react2.default.createElement("span", { className: "icon-bar" }),
-                            _react2.default.createElement("span", { className: "icon-bar" })
+                            _react2.default.createElement('span', { className: 'icon-bar' }),
+                            _react2.default.createElement('span', { className: 'icon-bar' }),
+                            _react2.default.createElement('span', { className: 'icon-bar' })
                         ),
                         _react2.default.createElement(
-                            "a",
-                            { className: "navbar-brand", href: "#" },
-                            "Atilla"
+                            _reactRouter.Link,
+                            { className: 'navbar-brand', to: "#" },
+                            'Atilla'
                         )
                     )
                 )
@@ -494,7 +496,7 @@ var NavBar = function (_React$Component) {
 
 exports.default = NavBar;
 
-},{"react":"react"}],10:[function(require,module,exports){
+},{"react":"react","react-router":"react-router"}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -864,13 +866,11 @@ var ServersStore = function () {
     _createClass(ServersStore, [{
         key: 'onGetServersInfoSuccess',
         value: function onGetServersInfoSuccess(data) {
-            console.log('serversInfo success', data);
             this.servers = data;
         }
     }, {
         key: 'onGetServersInfoFail',
         value: function onGetServersInfoFail(jqXhr) {
-            console.log('serversInfo fail');
             // Handle multiple response formats, fallback to HTTP status code number.
             //toastr.error(jqXhr.responseJSON && jqXhr.responseJSON.message || jqXhr.responseText || jqXhr.statusText);
         }

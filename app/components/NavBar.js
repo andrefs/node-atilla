@@ -1,4 +1,5 @@
-import React from 'react';
+import React  from 'react';
+import {Link} from 'react-router';
 
 class NavBar extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class NavBar extends React.Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    <a className="navbar-brand" href="#">Atilla</a>
+                    <Link className="navbar-brand" to={"#"}>Atilla</Link>
                 </div>
 
                 {/*

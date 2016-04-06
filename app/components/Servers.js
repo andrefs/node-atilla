@@ -20,7 +20,6 @@ class Servers extends React.Component {
     }
 
     onChange(state) {
-        console.log('onChange', state);
         this.setState(state);
     }
 
@@ -36,7 +35,6 @@ class Servers extends React.Component {
                 </tr>
             );
         });
-        console.log('XXXXXXXX 2', serversInfo);
 
         return (
             <section id="servers" className="app-section panel panel-default">

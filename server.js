@@ -7,6 +7,7 @@ var Router       = require('react-router');
 var routes       = require('./app/routes');
 
 var express      = require('express');
+var favicon      = require('serve-favicon');
 var app          = new express();
 var logger       = require('morgan');
 var port         = process.env.PORT || 7777;
@@ -18,6 +19,9 @@ app.set('view engine', 'hbs');
 
 // static files path
 app.use(express.static(__dirname+'/public/'));
+
+// favicon.png
+app.use(favicon(__dirname + '/public/favicon.png'));
 
 // logger
 app.use(logger('dev'));
