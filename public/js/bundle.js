@@ -2,6 +2,63 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _alt = require('../alt');
+
+var _alt2 = _interopRequireDefault(_alt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ServersActions = function () {
+  function ServersActions() {
+    _classCallCheck(this, ServersActions);
+
+    this.generateActions('getServersInfoSuccess', 'getServersInfoFail');
+  }
+
+  _createClass(ServersActions, [{
+    key: 'getServersInfo',
+    value: function getServersInfo() {
+      var _this = this;
+
+      $.ajax({ url: '/api/servers' }).done(function (data) {
+        _this.actions.getServersInfoSuccess(data);
+      }).fail(function (jqXhr) {
+        _this.actions.getServersInfoFail(jqXhr);
+      });
+    }
+  }]);
+
+  return ServersActions;
+}();
+
+exports.default = _alt2.default.createActions(ServersActions);
+
+},{"../alt":2}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _alt = require('alt');
+
+var _alt2 = _interopRequireDefault(_alt);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = new _alt2.default();
+
+},{"alt":"alt"}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
@@ -64,7 +121,7 @@ var App = function (_React$Component) {
 
 exports.default = App;
 
-},{"./Footer":3,"./JumboTron":6,"./NavBar":7,"./NoJavaScript":8,"react":"react"}],2:[function(require,module,exports){
+},{"./Footer":5,"./JumboTron":8,"./NavBar":9,"./NoJavaScript":10,"react":"react"}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -119,7 +176,7 @@ var Documents = function (_React$Component) {
 
 exports.default = Documents;
 
-},{"react":"react"}],3:[function(require,module,exports){
+},{"react":"react"}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -154,7 +211,7 @@ var Footer = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "footer",
-        { id: "footer", "class": "container" },
+        { id: "footer", className: "container" },
         _react2.default.createElement(
           "p",
           null,
@@ -180,7 +237,7 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"react":"react"}],4:[function(require,module,exports){
+},{"react":"react"}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -226,7 +283,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"react":"react"}],5:[function(require,module,exports){
+},{"react":"react"}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -281,7 +338,7 @@ var Indexes = function (_React$Component) {
 
 exports.default = Indexes;
 
-},{"react":"react"}],6:[function(require,module,exports){
+},{"react":"react"}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -367,7 +424,7 @@ var JumboTron = function (_React$Component) {
 
 exports.default = JumboTron;
 
-},{"react":"react"}],7:[function(require,module,exports){
+},{"react":"react"}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -437,7 +494,7 @@ var NavBar = function (_React$Component) {
 
 exports.default = NavBar;
 
-},{"react":"react"}],8:[function(require,module,exports){
+},{"react":"react"}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -483,8 +540,8 @@ var NoJavaScript = function (_React$Component) {
 
 exports.default = NoJavaScript;
 
-},{"react":"react"}],9:[function(require,module,exports){
-"use strict";
+},{"react":"react"}],11:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -492,9 +549,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _ServersStore = require('../stores/ServersStore');
+
+var _ServersStore2 = _interopRequireDefault(_ServersStore);
+
+var _ServersActions = require('../actions/ServersActions');
+
+var _ServersActions2 = _interopRequireDefault(_ServersActions);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -507,28 +574,105 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Servers = function (_React$Component) {
     _inherits(Servers, _React$Component);
 
-    function Servers() {
+    function Servers(props) {
         _classCallCheck(this, Servers);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Servers).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Servers).call(this, props));
+
+        _this.state = _ServersStore2.default.getState();
+        _this.onChange = _this.onChange.bind(_this);
+        return _this;
     }
 
     _createClass(Servers, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            _ServersStore2.default.listen(this.onChange);
+            _ServersActions2.default.getServersInfo();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            _ServersStore2.default.unlisten(this.onChange);
+        }
+    }, {
+        key: 'onChange',
+        value: function onChange(state) {
+            this.setState(state);
+        }
+    }, {
+        key: 'render',
         value: function render() {
+
+            var serversInfo = this.state.servers.map(function (server) {
+                return;
+                _react2.default.createElement('tr', null);
+            });
+
             return _react2.default.createElement(
-                "section",
-                { id: "servers", className: "app-section panel panel-default" },
+                'section',
+                { id: 'servers', className: 'app-section panel panel-default' },
                 _react2.default.createElement(
-                    "header",
-                    { className: "panel-heading" },
+                    'header',
+                    { className: 'panel-heading' },
                     _react2.default.createElement(
-                        "h2",
+                        'h2',
                         null,
-                        "Servers"
+                        'Servers'
                     )
                 ),
-                _react2.default.createElement("div", { className: "panel-body" })
+                _react2.default.createElement(
+                    'div',
+                    { className: 'panel-body' },
+                    _react2.default.createElement(
+                        'table',
+                        { className: 'table table-hover table-bordered' },
+                        _react2.default.createElement(
+                            'thead',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'name'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'indexes'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    null,
+                                    'size'
+                                ),
+                                _react2.default.createElement('th', null)
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tbody',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: '/servers/andrefs.com' },
+                                        'andrefs.com'
+                                    )
+                                ),
+                                _react2.default.createElement('td', null),
+                                _react2.default.createElement('td', null),
+                                _react2.default.createElement('td', null)
+                            )
+                        )
+                    )
+                )
             );
         }
     }]);
@@ -538,7 +682,7 @@ var Servers = function (_React$Component) {
 
 exports.default = Servers;
 
-},{"react":"react"}],10:[function(require,module,exports){
+},{"../actions/ServersActions":1,"../stores/ServersStore":15,"react":"react","react-router":"react-router"}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -593,7 +737,7 @@ var Types = function (_React$Component) {
 
 exports.default = Types;
 
-},{"react":"react"}],11:[function(require,module,exports){
+},{"react":"react"}],13:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -626,7 +770,7 @@ _reactDom2.default.render(_react2.default.createElement(
   _routes2.default
 ), document.getElementById('app'));
 
-},{"./routes":12,"history/lib/createBrowserHistory":22,"react":"react","react-dom":"react-dom","react-router":"react-router"}],12:[function(require,module,exports){
+},{"./routes":14,"history/lib/createBrowserHistory":25,"react":"react","react-dom":"react-dom","react-router":"react-router"}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -678,7 +822,54 @@ exports.default = _react2.default.createElement(
   _react2.default.createElement(_reactRouter.Redirect, { from: '/servers/:serversid/indexes/:indexid/types/:typeid/documents', to: '/servers/:serversid/indexes/:indexid/types/:typeid' })
 );
 
-},{"./components/App":1,"./components/Documents":2,"./components/Home":4,"./components/Indexes":5,"./components/Servers":9,"./components/Types":10,"react":"react","react-router":"react-router"}],13:[function(require,module,exports){
+},{"./components/App":3,"./components/Documents":4,"./components/Home":6,"./components/Indexes":7,"./components/Servers":11,"./components/Types":12,"react":"react","react-router":"react-router"}],15:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _alt = require('../alt');
+
+var _alt2 = _interopRequireDefault(_alt);
+
+var _ServersActions = require('../actions/ServersActions');
+
+var _ServersActions2 = _interopRequireDefault(_ServersActions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ServersStore = function () {
+  function ServersStore() {
+    _classCallCheck(this, ServersStore);
+
+    this.bindActions(_ServersActions2.default);
+    this.servers = [];
+  }
+
+  _createClass(ServersStore, [{
+    key: 'onGetServersInfoSuccess',
+    value: function onGetServersInfoSuccess(data) {
+      this.servers = data;
+    }
+  }, {
+    key: 'onGetServersInfoFail',
+    value: function onGetServersInfoFail(jqXhr) {
+      // Handle multiple response formats, fallback to HTTP status code number.
+      //toastr.error(jqXhr.responseJSON && jqXhr.responseJSON.message || jqXhr.responseText || jqXhr.statusText);
+    }
+  }]);
+
+  return ServersStore;
+}();
+
+exports.default = _alt2.default.createStore(ServersStore);
+
+},{"../actions/ServersActions":1,"../alt":2}],16:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
 var isArguments = require('./lib/is_arguments.js');
@@ -774,7 +965,7 @@ function objEquiv(a, b, opts) {
   return typeof a === typeof b;
 }
 
-},{"./lib/is_arguments.js":14,"./lib/keys.js":15}],14:[function(require,module,exports){
+},{"./lib/is_arguments.js":17,"./lib/keys.js":18}],17:[function(require,module,exports){
 var supportsArgumentsClass = (function(){
   return Object.prototype.toString.call(arguments)
 })() == '[object Arguments]';
@@ -796,7 +987,7 @@ function unsupported(object){
     false;
 };
 
-},{}],15:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 exports = module.exports = typeof Object.keys === 'function'
   ? Object.keys : shim;
 
@@ -807,7 +998,7 @@ function shim (obj) {
   return keys;
 }
 
-},{}],16:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /**
  * Indicates that navigation was caused by a call to history.push.
  */
@@ -839,7 +1030,7 @@ exports['default'] = {
   REPLACE: REPLACE,
   POP: POP
 };
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -898,7 +1089,7 @@ function loopAsync(turns, work, callback) {
 
   next();
 }
-},{}],18:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function (process){
 /*eslint-disable no-empty */
 'use strict';
@@ -975,7 +1166,7 @@ function readState(key) {
 }
 }).call(this,require('_process'))
 
-},{"_process":29,"warning":30}],19:[function(require,module,exports){
+},{"_process":32,"warning":33}],22:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -1051,13 +1242,13 @@ function supportsGoWithoutReloadUsingHash() {
   var ua = navigator.userAgent;
   return ua.indexOf('Firefox') === -1;
 }
-},{}],20:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 exports.canUseDOM = canUseDOM;
-},{}],21:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1108,7 +1299,7 @@ function parsePath(path) {
 }
 }).call(this,require('_process'))
 
-},{"_process":29,"warning":30}],22:[function(require,module,exports){
+},{"_process":32,"warning":33}],25:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1288,7 +1479,7 @@ exports['default'] = createBrowserHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":16,"./DOMStateStorage":18,"./DOMUtils":19,"./ExecutionEnvironment":20,"./PathUtils":21,"./createDOMHistory":23,"_process":29,"invariant":28}],23:[function(require,module,exports){
+},{"./Actions":19,"./DOMStateStorage":21,"./DOMUtils":22,"./ExecutionEnvironment":23,"./PathUtils":24,"./createDOMHistory":26,"_process":32,"invariant":31}],26:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1332,7 +1523,7 @@ exports['default'] = createDOMHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./DOMUtils":19,"./ExecutionEnvironment":20,"./createHistory":24,"_process":29,"invariant":28}],24:[function(require,module,exports){
+},{"./DOMUtils":22,"./ExecutionEnvironment":23,"./createHistory":27,"_process":32,"invariant":31}],27:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1624,7 +1815,7 @@ exports['default'] = createHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":16,"./AsyncUtils":17,"./PathUtils":21,"./createLocation":25,"./deprecate":26,"./runTransitionHook":27,"_process":29,"deep-equal":13,"warning":30}],25:[function(require,module,exports){
+},{"./Actions":19,"./AsyncUtils":20,"./PathUtils":24,"./createLocation":28,"./deprecate":29,"./runTransitionHook":30,"_process":32,"deep-equal":16,"warning":33}],28:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1679,7 +1870,7 @@ exports['default'] = createLocation;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":16,"./PathUtils":21,"_process":29,"warning":30}],26:[function(require,module,exports){
+},{"./Actions":19,"./PathUtils":24,"_process":32,"warning":33}],29:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1702,7 +1893,7 @@ exports['default'] = deprecate;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"_process":29,"warning":30}],27:[function(require,module,exports){
+},{"_process":32,"warning":33}],30:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1730,7 +1921,7 @@ exports['default'] = runTransitionHook;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"_process":29,"warning":30}],28:[function(require,module,exports){
+},{"_process":32,"warning":33}],31:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -1783,7 +1974,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-},{}],29:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -1876,7 +2067,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],30:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -1938,7 +2129,7 @@ if ("development" !== 'production') {
 
 module.exports = warning;
 
-},{}]},{},[11])
+},{}]},{},[13])
 
 
 //# sourceMappingURL=bundle.js.map

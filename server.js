@@ -27,6 +27,8 @@ app.use(parser.urlencoded({extended:false}));
 app.use(cookieParser());
 
 // routing
+require('./routes/api/servers')(app);
+
 app.use(function(req, res) {
     Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
         if(err){
