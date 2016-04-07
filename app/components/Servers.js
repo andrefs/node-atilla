@@ -3,6 +3,8 @@ import {Link}         from 'react-router';
 import ServersStore   from '../stores/ServersStore'
 import ServersActions from '../actions/ServersActions';
 import humanSize      from 'human-size';
+import cookie         from 'react-cookie';
+import AddServerForm  from './AddServerForm';
 
 class Servers extends React.Component {
     constructor(props){
@@ -22,6 +24,9 @@ class Servers extends React.Component {
 
     onChange(state) {
         this.setState(state);
+        var expireDate = new Date();
+        expireDate.setYear(expireDate.getYear()+1);
+        cookie.save('atilla_servers', 'cenas', {path:'/', domain:'localhost', maxAge: 365*24*60*60});
     }
 
     render() {
@@ -57,6 +62,7 @@ class Servers extends React.Component {
                             {serversInfo}
                         </tbody>
                     </table>
+                    <AddServerForm />
                 </div>
             </section>
         );
