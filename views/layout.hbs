@@ -17,9 +17,10 @@
         <script src="/js/bundle.js"></script>
 
         <script type="text/javascript">
-        $(function () {
-          $('[data-toggle="popover"]').popover()
-        })
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover()
+            $('[data-toggle="tooltip"]').tooltip()
+        });
         </script>
     </body>
 </html>

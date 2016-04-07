@@ -5,6 +5,8 @@ import ServersActions from '../actions/ServersActions';
 import humanSize      from 'human-size';
 import cookie         from 'react-cookie';
 import AddServerForm  from './AddServerForm';
+import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import Popover        from 'react-bootstrap/lib/Popover';
 
 class Servers extends React.Component {
     constructor(props){
@@ -31,10 +33,25 @@ class Servers extends React.Component {
 
     render() {
         let serversInfo = this.state.servers.map((server) => {
+            const numIndices  = Object.keys(server.indices).length;
+            const indicesList = Object.keys(server.indices).map((indice) => {
+                return (
+                    <li key={indice}>{indice}</li>
+                );
+            });
+            const popover = (
+                <Popover title={numIndices+" Indice"+(numIndices ? 's' : '')}>
+                    <ul>{indicesList}</ul>
+                </Popover>
+            );
             return (
-                <tr key="{server.id}">
+                <tr key={server.id}>
                     <td><Link to={"/servers/"+server.id}>{server.name}</Link></td>
-                    <td>{Object.keys(server.indices).length}</td>
+                    <td>
+                        <OverlayTrigger placement="right" overlay={popover}>
+                            <span className="has-details">{numIndices}</span>
+                        </OverlayTrigger>
+                    </td>
                     <td>{server.docs.count}</td>
                     <td>{humanSize(server.store.size_in_bytes)}</td>
                     <td></td>
@@ -52,7 +69,7 @@ class Servers extends React.Component {
                         <thead>
                             <tr>
                                 <th>name</th>
-                                <th>indexes</th>
+                                <th>indices</th>
                                 <th>docs</th>
                                 <th>size</th>
                                 <th></th>
